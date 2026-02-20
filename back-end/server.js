@@ -1,18 +1,29 @@
 const express = require("express");
 const app = express();
-const connectDB = require('./dbConnection')
-const Ticket = require('./schema');
+const connectDB = require("./dbConnection");
 const cors = require("cors");
 
+// CORS
 app.use(cors());
-//Middleware for parsing Json
+
+// Middleware
 app.use(express.json());
-//Connecting to Database
+app.use(express.urlencoded({ extended: false }));
+
+// Connect Database
 connectDB();
-app.use(express.urlencoded({ extended: false }))
-// creating an api and seperating it.
+
+// Root Route (so no "Cannot GET /")
+app.get("/", (req, res) => {
+  res.send("Movie Booking Backend is running 🚀");
+});
+
+// API Routes
 app.use("/api", require("./routes"));
 
-app.listen(8080,()=>{
-    console.log("App listening to port 8080")
+// PORT Fix for Render
+const PORT = process.env.PORT || 8080;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
