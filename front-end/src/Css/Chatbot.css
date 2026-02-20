@@ -83,3 +83,41 @@
   cursor: pointer;
   font-size: 18px;
 }
+/* Floating button */
+.chat-toggle-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #e50914;
+  color: white;
+  font-size: 22px;
+  padding: 14px 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+
+/* Chat window */
+.chatbot-box {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 320px;
+  height: 450px;
+  background: #1e1e1e;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  z-index: 1000;
+}
+
+.close-btn {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
