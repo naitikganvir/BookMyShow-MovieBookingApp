@@ -9,7 +9,7 @@ router.use(express.json()); // Parse incoming JSON data
 router.use(cors()); // Enable Cross-Origin Resource Sharing (CORS)
 
 // Endpoint for creating a new booking and adding it to the database.
-router.post("/booking", async (req, res) => {
+router.post("/", async (req, res) => {
   const { movie, slot, seats } = req.body;
 
   try {
@@ -31,7 +31,7 @@ router.post("/booking", async (req, res) => {
 });
 
 // Endpoint for getting the last booking details from the database and sending it to the frontend.
-router.get("/booking", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     // Retrieve the last booking by sorting in descending order and limiting to 1 result
     const myData = await Ticket.find().sort({ _id: -1 }).limit(1);
