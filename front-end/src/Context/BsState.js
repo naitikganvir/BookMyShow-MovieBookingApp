@@ -31,7 +31,7 @@ const BsState = (props) => {
   const handlePostBooking = async () => {
     // Sending api request to backend with user selected movie, slot and seats to book movie.
     const response = await fetch(
-      `http://localhost:8080/api/booking`,
+      `https://bookmyshow-moviebookingapp.onrender.com`,
       {
         method: "POST",
         headers: {
